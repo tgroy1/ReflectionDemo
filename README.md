@@ -5,4 +5,4 @@ Some practice exercises using Java Reflection
 2. Object creation
 3. JSON serializer (object and array to Json)
 4. ConfigParser (Properties file to object)
-5. Annotations
+5. Annotations (Call methods in different package classes based on their annotations)
