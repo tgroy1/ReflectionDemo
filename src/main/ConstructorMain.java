@@ -28,7 +28,7 @@ public class ConstructorMain {
 		System.out.println(
 				String.format("Class %s has %d declared constructors", clazz.getSimpleName(), constructors.length));
 
-		for (Constructor con : constructors) {
+		for (Constructor<?> con : constructors) {
 			Class<?>[] parameters = con.getParameterTypes();
 
 			List<String> paramTypes = Arrays.stream(parameters).map(type -> type.getSimpleName())
