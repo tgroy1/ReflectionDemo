@@ -6,3 +6,4 @@ Some practice exercises using Java Reflection
 3. JSON serializer (object and array to Json)
 4. ConfigParser (Properties file to object)
 5. Annotations (Call methods in different package classes based on their annotations)
+6. GetterSetterTest (Testing whether a model/DTO class has all getters and setters implemented correctly)
