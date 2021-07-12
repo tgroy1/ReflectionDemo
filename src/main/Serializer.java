@@ -17,7 +17,8 @@ public class Serializer {
 		Address familyAddress2 = new Address("WB", "India");
 		Address[] familyAddresses = {familyAddress1, familyAddress2};
 		
-		Employee mike = new Employee(1, "Mike Wilson", false, 100.123, address, domains, familyAddresses);
+		String[][] phoneArr = {{"Mobile", "9876543210"}, {"Office", "+1-911-123-4567"}};
+		Employee mike = new Employee(1, "Mike Wilson", false, 100.123, address, domains, familyAddresses, phoneArr);
 		
 		String json = objectToJson(mike, 0);
 		
@@ -33,7 +34,7 @@ public class Serializer {
 		sb.append("{");
 		sb.append("\n");
 		
-		for (int i=0; i< fields.length; i++) {			
+		for (int i=0; i<fields.length; i++) {			
 			Field field = fields[i];
 			field.setAccessible(true);
 			
@@ -74,6 +75,7 @@ public class Serializer {
 		int arrayLength = Array.getLength(arrayInstance);
 		Class<?> componentType = arrayInstance.getClass().getComponentType();
 		
+		sb.append(indent(indentSize));
 		sb.append("[");
 		sb.append("\n");
 		
@@ -86,6 +88,8 @@ public class Serializer {
 			} else if (componentType.equals(String.class)) {
 				sb.append(indent(indentSize + 1));
 				sb.append(formatStringValue(element.toString()));
+			} else if (componentType.isArray()) {
+				sb.append(arrayToJson(element, indentSize + 1));
 			} else {
 				sb.append(objectToJson(element, indentSize + 1));
 			}

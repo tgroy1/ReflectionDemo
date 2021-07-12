@@ -9,6 +9,7 @@ public class Employee {
 	private Address address;
 	private String[] domains;
 	private Address[] familyAddresses;
+	private String[][] phoneArr;
 	
 	private Employee(int id) {
 		this.id = id;
@@ -27,7 +28,8 @@ public class Employee {
 		this.manager = manager;
 	}
 	
-	public Employee(int id, String name, boolean manager, double salary, Address address, String[] domains, Address[] familyAddresses) {
+	public Employee(int id, String name, boolean manager, double salary, Address address, String[] domains,
+			Address[] familyAddresses, String[][] arr) {
 		this.id = id;
 		this.name = name;
 		this.manager = manager;
@@ -35,6 +37,7 @@ public class Employee {
 		this.address = address;
 		this.domains = domains;
 		this.familyAddresses = familyAddresses;
+		this.phoneArr = arr;
 	}
 
 	public int getId() {

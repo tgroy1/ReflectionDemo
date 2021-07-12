@@ -39,7 +39,7 @@ public class TestMain {
 		
 		System.out.println("Fields are ---");
 		for (Field field: fields) {
-			System.out.println("Field modifier is : " + Modifier.isPrivate(field.getModifiers()));
+			System.out.println("Field modifier is private: " + Modifier.isPrivate(field.getModifiers()));
 			System.out.println("Field name : " + field.getName() + ", field type : " + field.getType().getName());
 		}
 		System.out.println();
