@@ -23,6 +23,7 @@ public class ConfigParser {
 	}
 	
 	
+	@SuppressWarnings({ "resource", "unchecked" })
 	private static <T> T createConfig(Class<?> clazz, Path filePath) throws IOException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
 		Scanner scanner = new Scanner(filePath);
