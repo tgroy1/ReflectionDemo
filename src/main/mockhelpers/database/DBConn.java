@@ -9,7 +9,7 @@ import main.annotations.RetryOperation;
 @InitializeClass
 public class DBConn {
 	
-	private int failCounter = 5; //simulates failure to get database connectivity for some time
+	private int failCounter = 3; //simulates failure to get database connectivity for some time
 	
 	@InitializeMethod
 	@RetryOperation(
